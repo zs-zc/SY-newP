@@ -35,6 +35,9 @@
       </fzselect>
       <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
     </el-select>
+    <div>
+      gitGit
+    </div>
     <p v-pre>sadsad</p>
     <button @click="sub">提交</button>
     <button @click="changeCompon">改变组件</button>

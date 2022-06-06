@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>POSTS</h1>
+    <h1>POSTS-s-s-s-s-s-s-</h1>
   </div>
 </template>
 

@@ -34,9 +34,7 @@
       >
       </fzselect>
     </el-select>
-    <div>
-      gitGit
-    </div>
+    <div>gitGit</div>
     <p v-pre>sadsad</p>
     <button @click="sub">提交</button>
     <button @click="changeCompon">改变组件</button>
@@ -189,33 +187,36 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
 .hei {
   height: 30px;
+  padding_top_space(warp_padding);
 }
+
 .xxc {
   width: 100%;
   height: 500px;
   border: 1px solid #000;
 }
-.fade-enter-active,
-.fade-leave-active {
+
+.fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter,
-.fade-leave-active {
+
+.fade-enter, .fade-leave-active {
   opacity: 0;
 }
+
 .list-item {
   display: inline-block;
   margin-right: 10px;
 }
-.list-enter-active,
-.list-leave-active {
+
+.list-enter-active, .list-leave-active {
   transition: all 1s;
 }
-.list-enter,
-.list-leave-active {
+
+.list-enter, .list-leave-active {
   opacity: 0;
   transform: translateY(30px);
 }

@@ -182,6 +182,7 @@ export default {
     // },
   },
   mounted() {
+    console.log('我在main上新增了');
     this.xx("x\uD83D\uDE80y");
   },
 };

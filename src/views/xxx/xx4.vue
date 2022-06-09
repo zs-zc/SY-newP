@@ -187,10 +187,9 @@ export default {
 };
 </script>
 
-<style scoped lang="stylus">
+<style scoped >
 .hei {
   height: 30px;
-  padding_top_space(warp_padding);
 }
 
 .xxc {

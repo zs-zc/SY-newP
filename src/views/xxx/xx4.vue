@@ -182,6 +182,7 @@ export default {
     // },
   },
   mounted() {
+    console.log('我和new合并，但我两不一样');
     this.xx("x\uD83D\uDE80y");
   },
 };

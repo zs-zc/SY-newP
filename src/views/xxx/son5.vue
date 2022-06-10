@@ -4,11 +4,11 @@
       <span>卡片选择</span>
       <el-row :gutter="24">
         <el-col :span="6" class="xx">
-          <el-button> <slot name="myBtn"></slot></el-button>
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
+          <el-button @click="btn1"> <slot name="myBtn"></slot></el-button>
+          <el-input v-model="input1" placeholder="请输入内容"></el-input>
         </el-col>
         <el-col :span="12">
-          <el-select v-model="value" placeholder="请选择">
+          <el-select v-model="value1" placeholder="请选择">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -19,16 +19,16 @@
           </el-select>
         </el-col>
         <el-col :span="6">
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
+          <el-input v-model="input2" placeholder="请输入内容"></el-input>
         </el-col>
       </el-row>
       <el-row :gutter="24">
         <el-col :span="6" class="xx">
-          <el-button><slot name="myBtn2"></slot></el-button>
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
+          <el-button @click="btn2"><slot name="myBtn2"></slot></el-button>
+          <el-input v-model="input3" placeholder="请输入内容"></el-input>
         </el-col>
         <el-col :span="12">
-          <el-select v-model="value" placeholder="请选择">
+          <el-select v-model="value2" placeholder="请选择">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -39,16 +39,21 @@
           </el-select>
         </el-col>
         <el-col :span="6">
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
+          <el-input v-model="input4" placeholder="请输入内容"></el-input>
         </el-col>
       </el-row>
     </el-card>
-   
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    sendSon: {
+      type: String,
+      default: "",
+    },
+  },
   data() {
     return {
       options: [
@@ -73,10 +78,22 @@ export default {
           label: "北京烤鸭",
         },
       ],
-      value: "",
+      input1: this.sendSon,
+      input2: "",
+      input3: "",
+      input4: "",
+      value1: "",
+      value2: "",
     };
   },
- 
+  methods: {
+    btn1() {
+      alert("001");
+    },
+    btn2() {
+      this.$emit("changeDia", true);
+    },
+  },
 };
 </script>
 

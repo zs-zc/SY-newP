@@ -53,6 +53,9 @@ export default {
       type: String,
       default: "",
     },
+    form: {
+      type: Object,
+    },
   },
   data() {
     return {
@@ -89,6 +92,7 @@ export default {
   methods: {
     btn1() {
       alert("001");
+      console.log(this.form, "传过来的form");
     },
     btn2() {
       this.$emit("changeDia", true);

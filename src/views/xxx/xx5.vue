@@ -11,7 +11,7 @@
         {{ "列表内容 " + o }}
       </div>
     </el-card>
-    <sonFive @changeDia="changeDia" :sendSon="sendSon">
+    <sonFive @changeDia="changeDia" :sendSon="sendSon" :form="form">
       <template v-slot:myBtn>改变的btn</template>
       <template slot="myBtn2">改变的btn2</template>
     </sonFive>
@@ -81,7 +81,8 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">立即创建</el-button>
-          <el-button>取消</el-button>
+          <m-button type="fail" round>取消</m-button>
+          <!-- <el-button>取消</el-button> -->
         </el-form-item>
       </el-form>
 
@@ -153,7 +154,11 @@ export default {
       this.centerDialogVisible = val;
     },
     onSubmit() {
-      console.log("submit!");
+      console.log(this.form, "form");
+      this.centerDialogVisible = false;
+      // console.log(JSON.parse(this.form));
+      console.log(JSON.stringify(this.form));
+      console.log(JSON.parse(JSON.stringify(this.form)));
     },
   },
 };

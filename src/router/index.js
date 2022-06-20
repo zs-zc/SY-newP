@@ -91,7 +91,7 @@ export const constantRoutes = [
         component: () => import('@/views/xxx/xx4'),
         meta: { title: 'xx4', icon: 'table' }
       },
-       {
+      {
         path: 'xx5',
         name: 'xx5',
         component: () => import('@/views/xxx/xx5'),
@@ -99,6 +99,29 @@ export const constantRoutes = [
       }
 
     ]
+  },
+  {
+    path: '/my-dialog',
+    name: '弹窗',
+    component: Layout,
+    redirect: '/my-dialog/my-dialog1',
+    meta: { title: '弹窗', icon: 'table' },
+
+    children: [
+      {
+        path: 'my-dialog1',
+        name: '弹窗1',
+        component: () => import('@/views/myDialog/myDialog1/index'),
+        meta: { title: '弹窗1', icon: 'table' }
+      },
+      {
+        path: 'my-dialog2',
+        name: '弹窗2',
+        component: () => import('@/views/myDialog/myDialog2/index'),
+        meta: { title: '弹窗2', icon: 'table' }
+      }
+    ]
+
   },
 
   {

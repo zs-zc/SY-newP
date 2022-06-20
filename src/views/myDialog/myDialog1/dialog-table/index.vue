@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     taskTable(val) {
-      console.log(val, "val");
+      console.log(val, this.tableData, "val");
       this.$refs.dialogContent.openDia(val);
     },
   },

@@ -31,7 +31,13 @@
         <el-badge :value="100" :max="10" class="item">
           <el-button size="small">回复</el-button>
         </el-badge>
-        <el-button @click="enterAdd">增加评论</el-button>
+        <el-button
+          :class="['btn', { hiden: isHiden === true }]"
+          @mouseover.native="over"
+          @mouseleave.native="leav"
+          @click="enterAdd"
+          >asssssssssssssssssssssssss</el-button
+        >
       </div>
     </div>
   </div>
@@ -52,6 +58,7 @@ export default {
       percentage: 20,
       clock: false,
       pinglun: 90,
+      isHiden: false,
       customColors: [
         { color: "#f56c6c", percentage: 20 },
         { color: "#e6a23c", percentage: 40 },
@@ -81,6 +88,15 @@ export default {
     },
     enterAdd() {
       this.pinglun++;
+      console.log(this.isHiden);
+    },
+    over() {
+      this.isHiden = true;
+      console.log(this.isHiden, "over");
+    },
+    leav() {
+      this.isHiden = false;
+      console.log(this.isHiden, "leav");
     },
   },
 };
@@ -96,5 +112,12 @@ export default {
 .item {
   margin-top: 10px;
   margin-right: 40px;
+}
+.btn {
+  width: 50px;
+  overflow: hidden;
+}
+.hiden {
+  overflow: unset;
 }
 </style>

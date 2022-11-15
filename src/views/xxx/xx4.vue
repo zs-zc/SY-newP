@@ -2,21 +2,11 @@
   <div>
     <selectson>
       <el-select v-model="value1" placeholder="请选择" slot="select1">
-        <el-option
-          v-for="item in options1"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        >
+        <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
       <el-select v-model="value2" placeholder="请选择" slot="select2">
-        <el-option
-          v-for="item in options2"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        >
+        <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
       <input class="hei" type="text" v-model="val1" slot="input1" />
@@ -24,14 +14,8 @@
     </selectson>
 
     <el-select v-model="value3" placeholder="请选择">
-      <fzselect
-        v-for="item in options3"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :width="200"
-        @mouseover.native="showAddress(item)"
-      >
+      <fzselect v-for="item in options3" :key="item.value" :label="item.label" :value="item.value" :width="200"
+        @mouseover.native="showAddress(item)">
       </fzselect>
     </el-select>
     <div>gitGit</div>
@@ -61,8 +45,7 @@
       <button v-on:click="remove">Remove</button>
       <transition-group name="list" tag="p">
         <span v-for="item in items" v-bind:key="item" class="list-item">
-          {{ item }}</span
-        >
+          {{ item }}</span>
       </transition-group>
     </div>
     <!--  -->
@@ -78,7 +61,7 @@
         </el-col>
       </el-row>
     </div>
-
+    <button @click="addddd">阿牛a</button>
     <!--  -->
   </div>
 </template>
@@ -88,6 +71,8 @@ import fzselect from "./FZSelect.vue";
 import selectson from "./selectAndInput.vue";
 import posts from "./posts.vue";
 import home from "./home.vue";
+import { messageBox } from "@/utils/messageBox";
+import { alertMsgTip } from "@/utils/alertMsgTip";
 export default {
   components: {
     selectson,
@@ -177,13 +162,20 @@ export default {
     remove: function () {
       this.items.splice(this.randomIndex(), 1);
     },
+    addddd() {
+      messageBox(this,true,"确定",true,"warning","是否确认删除",function(){
+              alert("001")
+            })
+
+      // alertMsgTip("success", "123", true, this);
+    },
     // shuffle: function () {
     //   this.items = _.shuffle(this.items); // 数组新增或移除元素产生平滑动画
     // },
   },
   mounted() {
-    console.log('我在main上新增了');
-    console.log('我和new合并，但我两不一样');
+    console.log("我在main上新增了");
+    console.log("我和new合并，但我两不一样");
     this.xx("x\uD83D\uDE80y");
   },
 };
@@ -200,11 +192,13 @@ export default {
   border: 1px solid #000;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-active {
+.fade-enter,
+.fade-leave-active {
   opacity: 0;
 }
 
@@ -213,11 +207,13 @@ export default {
   margin-right: 10px;
 }
 
-.list-enter-active, .list-leave-active {
+.list-enter-active,
+.list-leave-active {
   transition: all 1s;
 }
 
-.list-enter, .list-leave-active {
+.list-enter,
+.list-leave-active {
   opacity: 0;
   transform: translateY(30px);
 }
